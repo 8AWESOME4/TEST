@@ -13,7 +13,13 @@ namespace TEST
 {
     public partial class Main : Form
     {
-        private string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=I:\ISMY\PROJECT_S\JOB_Работа\TEST\Departmens.mdf;Integrated Security=True;Connect Timeout=30";
+        //private string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=I:\ISMY\PROJECT_S\JOB_Работа\TEST\Departmens.mdf;Integrated Security=True;Connect Timeout=30";
+
+
+        static string str = Environment.CurrentDirectory;
+
+        private string connString = $"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={str}\\DB\\Departmens.mdf;Integrated Security=True;Connect Timeout=30";
+
         public Main()
         {
             InitializeComponent();
@@ -38,23 +44,7 @@ namespace TEST
             DataTable dtJ = new DataTable();
             sdaJ.Fill(dtJ);
             return dtJ;
-        }
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            comboBx_Departmens.DataSource = Departmens(connString);
-            comboBx_Departmens.ValueMember = "ID";
-            comboBx_Departmens.DisplayMember = "Name";
-            Visible_comboBx_Departmens();
-            
-        }
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
+        }      
 
         private void Visible_comboBx_Departmens()
         {
@@ -128,6 +118,14 @@ namespace TEST
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            Visible_comboBx_Departmens();
+        }
+
+        private void btn_LoadDB_Click(object sender, EventArgs e)
+        {
+            comboBx_Departmens.DataSource = Departmens(connString);
+            comboBx_Departmens.ValueMember = "ID";
+            comboBx_Departmens.DisplayMember = "Name";
             Visible_comboBx_Departmens();
         }
     }

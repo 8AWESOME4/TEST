@@ -30,18 +30,19 @@ namespace TEST
         private void InitializeComponent()
         {
             this.grpBox_Departmens = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.lb_SumSalary = new System.Windows.Forms.Label();
             this.chckBx_AllDepartmens = new System.Windows.Forms.CheckBox();
             this.comboBx_Departmens = new System.Windows.Forms.ComboBox();
             this.DgvMain = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lb_Department = new System.Windows.Forms.Label();
-            this.lb_Chief = new System.Windows.Forms.Label();
-            this.lb_Salary = new System.Windows.Forms.Label();
             this.lb_Employee = new System.Windows.Forms.Label();
+            this.lb_Salary = new System.Windows.Forms.Label();
+            this.lb_Chief = new System.Windows.Forms.Label();
+            this.lb_Department = new System.Windows.Forms.Label();
             this.chckBx_Salary_Chief = new System.Windows.Forms.CheckBox();
-            this.lb_SumSalary = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btn_LoadDB = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.grpBox_Departmens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMain)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -59,6 +60,26 @@ namespace TEST
             this.grpBox_Departmens.TabIndex = 1;
             this.grpBox_Departmens.TabStop = false;
             this.grpBox_Departmens.Text = "Департаменты";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(6, 102);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(124, 17);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "Без руководителей";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // lb_SumSalary
+            // 
+            this.lb_SumSalary.AutoSize = true;
+            this.lb_SumSalary.Location = new System.Drawing.Point(4, 81);
+            this.lb_SumSalary.Name = "lb_SumSalary";
+            this.lb_SumSalary.Size = new System.Drawing.Size(115, 13);
+            this.lb_SumSalary.TabIndex = 2;
+            this.lb_SumSalary.Text = "Суммарная зарплата";
             // 
             // chckBx_AllDepartmens
             // 
@@ -103,23 +124,14 @@ namespace TEST
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Максимальная зарплата";
             // 
-            // lb_Department
+            // lb_Employee
             // 
-            this.lb_Department.AutoSize = true;
-            this.lb_Department.Location = new System.Drawing.Point(6, 22);
-            this.lb_Department.Name = "lb_Department";
-            this.lb_Department.Size = new System.Drawing.Size(76, 13);
-            this.lb_Department.TabIndex = 1;
-            this.lb_Department.Text = "Департамент";
-            // 
-            // lb_Chief
-            // 
-            this.lb_Chief.AutoSize = true;
-            this.lb_Chief.Location = new System.Drawing.Point(6, 46);
-            this.lb_Chief.Name = "lb_Chief";
-            this.lb_Chief.Size = new System.Drawing.Size(65, 13);
-            this.lb_Chief.TabIndex = 2;
-            this.lb_Chief.Text = "Должность";
+            this.lb_Employee.AutoSize = true;
+            this.lb_Employee.Location = new System.Drawing.Point(6, 97);
+            this.lb_Employee.Name = "lb_Employee";
+            this.lb_Employee.Size = new System.Drawing.Size(60, 13);
+            this.lb_Employee.TabIndex = 4;
+            this.lb_Employee.Text = "Сотрудник";
             // 
             // lb_Salary
             // 
@@ -130,14 +142,23 @@ namespace TEST
             this.lb_Salary.TabIndex = 3;
             this.lb_Salary.Text = "Зарплата";
             // 
-            // lb_Employee
+            // lb_Chief
             // 
-            this.lb_Employee.AutoSize = true;
-            this.lb_Employee.Location = new System.Drawing.Point(6, 97);
-            this.lb_Employee.Name = "lb_Employee";
-            this.lb_Employee.Size = new System.Drawing.Size(60, 13);
-            this.lb_Employee.TabIndex = 4;
-            this.lb_Employee.Text = "Сотрудник";
+            this.lb_Chief.AutoSize = true;
+            this.lb_Chief.Location = new System.Drawing.Point(6, 46);
+            this.lb_Chief.Name = "lb_Chief";
+            this.lb_Chief.Size = new System.Drawing.Size(65, 13);
+            this.lb_Chief.TabIndex = 2;
+            this.lb_Chief.Text = "Должность";
+            // 
+            // lb_Department
+            // 
+            this.lb_Department.AutoSize = true;
+            this.lb_Department.Location = new System.Drawing.Point(6, 22);
+            this.lb_Department.Name = "lb_Department";
+            this.lb_Department.Size = new System.Drawing.Size(76, 13);
+            this.lb_Department.TabIndex = 1;
+            this.lb_Department.Text = "Департамент";
             // 
             // chckBx_Salary_Chief
             // 
@@ -150,26 +171,6 @@ namespace TEST
             this.chckBx_Salary_Chief.UseVisualStyleBackColor = true;
             this.chckBx_Salary_Chief.CheckedChanged += new System.EventHandler(this.chckBx_Salary_Chief_CheckedChanged);
             // 
-            // lb_SumSalary
-            // 
-            this.lb_SumSalary.AutoSize = true;
-            this.lb_SumSalary.Location = new System.Drawing.Point(4, 81);
-            this.lb_SumSalary.Name = "lb_SumSalary";
-            this.lb_SumSalary.Size = new System.Drawing.Size(115, 13);
-            this.lb_SumSalary.TabIndex = 2;
-            this.lb_SumSalary.Text = "Суммарная зарплата";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 102);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(124, 17);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Без руководителей";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // btn_LoadDB
             // 
             this.btn_LoadDB.Location = new System.Drawing.Point(12, 323);
@@ -178,20 +179,30 @@ namespace TEST
             this.btn_LoadDB.TabIndex = 5;
             this.btn_LoadDB.Text = "Загрузить БД";
             this.btn_LoadDB.UseVisualStyleBackColor = true;
+            this.btn_LoadDB.Click += new System.EventHandler(this.btn_LoadDB_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(140, 329);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(727, 20);
+            this.textBox1.TabIndex = 6;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 382);
+            this.ClientSize = new System.Drawing.Size(890, 377);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_LoadDB);
             this.Controls.Add(this.chckBx_Salary_Chief);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DgvMain);
             this.Controls.Add(this.grpBox_Departmens);
             this.Name = "Main";
-            this.Text = "TEST";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "TEST";            
             this.grpBox_Departmens.ResumeLayout(false);
             this.grpBox_Departmens.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMain)).EndInit();
@@ -216,6 +227,7 @@ namespace TEST
         private System.Windows.Forms.Label lb_SumSalary;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button btn_LoadDB;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
